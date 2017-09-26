@@ -8,18 +8,15 @@ export class AuthGaurdService implements CanActivate {
 
   isLoggedIn: boolean;
 
-  constructor(private auth: AuthenticationService, private router: Router) {
-    this.auth.isAuthenticated.subscribe(data => {
-      this.isLoggedIn = data;
-    });
-   }
+  constructor(private auth: AuthenticationService, private router: Router) { }
 
   canActivate() {
     console.log('test');
-    if (!this.isLoggedIn) {
-      this.router.navigateByUrl('/home/login');
+    if (localStorage.cre && JSON.parse(localStorage.cre).access_token) {
+      return true;
     }
-    return this.isLoggedIn;
+    this.router.navigateByUrl('/home/login');
+    return false;
   }
 
 }

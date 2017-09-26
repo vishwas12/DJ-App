@@ -18,7 +18,7 @@ export class AuthenticationService {
 
   constructor(private OauthApiServiceService: OauthApiServiceService, private UtilityApiServiceService: UtilityApiServiceService,
     private route: Router) {
-      this.cleanStorageData();
+      // this.cleanStorageData();
     }
 
   login(email: string, password: string) {

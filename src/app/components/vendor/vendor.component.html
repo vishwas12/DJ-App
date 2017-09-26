@@ -1,5 +1,5 @@
 <app-vendor-header></app-vendor-header>
-<md-sidenav-container>
+<md-sidenav-container style="height: calc(100vh - 64px)">
   <md-sidenav mode="side" opened="true">
     <ul>
       <li>Dashboard</li>
@@ -9,7 +9,7 @@
       <li>Settings</li>
     </ul>
   </md-sidenav>
-  <div class="my-content">
+  <div class="my-content" style="padding: 20px;background: white;border: 1px solid #ccc;margin: 10px;height: calc(100vh - 94px);overflow-x: hidden;">
     <router-outlet></router-outlet>
   </div>
 </md-sidenav-container>
