@@ -1,0 +1,33 @@
+.example-icon {
+    padding: 0 14px;
+  }
+  
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.nav {
+  background-color: transparent;
+  color: white;
+  position: absolute;
+
+  .head-btn{
+    margin:0 15px;
+    background-color:#e51c23;
+
+    &:hover{
+      color: #e51c23;
+      background-color: white;
+    }
+  }
+
+  .prof-link{
+    border: 2px solid #e51c23;
+    color: white;
+    font-size: 16px;
+    padding: 0px 10px;
+    border-radius: 4px;
+    text-decoration: none;
+    margin-right: 10px;
+  }
+}

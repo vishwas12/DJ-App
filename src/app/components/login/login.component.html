@@ -1,0 +1,57 @@
+<div class="loginContainer" fxLayout="row">
+    <div class="leftContainer" fxFlex="35%">
+        <div class="playcard color">
+            <div class="content">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus id quia repellendus illum ipsum. Perspiciatis, sunt distinctio! Facere, distinctio nam. Assumenda similique molestias, soluta natus ab in blanditiis repudiandae? Sit.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus id quia repellendus illum ipsum. Perspiciatis, sunt distinctio! Facere, distinctio nam. Assumenda similique molestias, soluta natus ab in blanditiis repudiandae? Sit.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus id quia repellendus illum ipsum. Perspiciatis, sunt distinctio! Facere, distinctio nam. Assumenda similique molestias, soluta natus ab in blanditiis repudiandae? Sit.
+            </div>
+        </div>
+    </div>
+    <!-- <div class="divider">
+    </div> -->
+    <div class="rightContainer" fxFlex="40%" fxFlexOffset="20%">
+        <div class="playcard" >
+            <div class="title">
+                <span>Login</span>
+            </div>
+            <div class="divider"></div>
+            <div class="content">
+                <div fxLayout="row">
+                    <form [formGroup]="loginForm" novalidate fxFlex="100%">
+                        <div fxLayout="row" class="input-pos">
+                            <md-form-field fxFlex="100%" class="field-pos">
+                              <input mdInput placeholder="Email" type="text" formControlName="email">
+                              <md-error *ngIf="loginForm.controls.email.hasError('pattern')">
+                                Please enter a valid email address
+                              </md-error>
+                              <md-error *ngIf="loginForm.controls.email.hasError('required')">
+                                Email is required
+                              </md-error>
+                            </md-form-field>
+                        </div>
+                        <div fxLayout="row" class="input-pos">
+                            <md-form-field fxFlex="100%">
+                              <input mdInput placeholder="Password" type="password" formControlName="password">
+                              <md-error *ngIf="loginForm.controls.password.hasError('required')">
+                                Password is required
+                              </md-error>
+                            </md-form-field>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="action" fxLayout="column" fxLayoutAlign="center center">
+                <button md-raised-button class="btn" (click)="login()">
+                    <md-icon class="icon">person</md-icon>LOGIN
+                </button>
+                <div class="link">
+                    <a routerLink="/home/register">Create Account</a>
+                </div>
+                <div class="link">
+                    <span>Forgot Password? <a routerLink="/home/forgotPassword">CLICK HERE</a></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

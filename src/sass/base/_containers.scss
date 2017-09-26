@@ -1,0 +1,68 @@
+.loginContainer,.registerContainer,.resetContainer,.confirmContainer,.forgotPasswordContainer{
+    padding: 30px;
+    background: url(/assets/back1.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    height: 100%;
+
+    .playcard{
+        background: white;
+        border-radius: 2px;
+        box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+
+        .title{
+            font-size: 24px;
+            text-transform: uppercase;
+            text-align: center;
+            padding: 25px 0;
+            font-weight: 300;
+        }
+        .divider{
+            height: 1px;
+            overflow: hidden;
+            background-color: #e0e0e0;
+        }
+        .content{
+            padding: 25px;
+
+            .input-pos{
+                margin-bottom: 10px;
+                height: 56px;
+            }
+        }
+
+        .action{
+            padding-bottom: 25px;
+            .btn{
+                background-color: #e51c23;
+                color: white;
+                text-transform: uppercase;
+                width: 40%;
+            }
+
+            .link {
+                margin-top: 15px;
+                a{
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+
+    .color{
+        background-color: #546e7a;
+        color: white;
+    }
+    
+    .divider{
+        position:absolute;
+        left:45%;
+        top:11%;
+        bottom:1%;
+        border-left:1px solid #e0e0e0;
+    }
+
+    .leftContainer, .rightContainer {
+        margin-top: 70px;
+    }
+}

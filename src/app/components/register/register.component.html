@@ -1,0 +1,87 @@
+<div class="registerContainer" fxLayout="row">
+        <div class="leftContainer" fxFlex="35%">
+            <div class="playcard color">
+                <div class="content">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus id quia repellendus illum ipsum. Perspiciatis, sunt distinctio! Facere, distinctio nam. Assumenda similique molestias, soluta natus ab in blanditiis repudiandae? Sit.
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus id quia repellendus illum ipsum. Perspiciatis, sunt distinctio! Facere, distinctio nam. Assumenda similique molestias, soluta natus ab in blanditiis repudiandae? Sit.
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus id quia repellendus illum ipsum. Perspiciatis, sunt distinctio! Facere, distinctio nam. Assumenda similique molestias, soluta natus ab in blanditiis repudiandae? Sit.
+                </div>
+            </div>
+        </div>
+        <!-- <div class="divider">
+        </div> -->
+        <div class="rightContainer" fxFlex="45%" fxFlexOffset="20%">
+            <div class="playcard" >
+                <div class="title">
+                    <span>Register</span>
+                </div>
+                <div class="divider"></div>
+                <div class="content">
+                    <div fxLayout="row">
+                        <form [formGroup]="registerForm" novalidate fxFlex="100%">
+                            <div fxLayout="row" class="input-pos" fxLayoutAlign="space-between center">
+                                <md-form-field fxFlex="48%" class="field-pos">
+                                  <input mdInput placeholder="First Name" type="text" formControlName="firstName">
+                                  <md-error *ngIf="registerForm.controls.firstName.hasError('required')">
+                                    First Name is required
+                                  </md-error>
+                                </md-form-field>
+                                <md-form-field fxFlex="48%" class="field-pos">
+                                    <input mdInput placeholder="Last Name" type="text" formControlName="lastName">
+                                </md-form-field>
+                            </div>
+                            <div fxLayout="row" class="input-pos" fxLayoutAlign="space-between center">
+                                <md-form-field fxFlex="48%">
+                                  <input mdInput placeholder="Email" type="email" formControlName="email">
+                                  <md-error *ngIf="registerForm.controls.email.hasError('required')">
+                                    Email is required
+                                  </md-error>
+                                  <md-error *ngIf="registerForm.controls.email.hasError('pattern')">
+                                    Please enter a valid email
+                                  </md-error>
+                                </md-form-field>
+                                <md-form-field fxFlex="48%">
+                                    <input mdInput placeholder="Phone Number" type="text" formControlName="mobileNumber">
+                                    <md-error *ngIf="registerForm.controls.mobileNumber.hasError('required')">
+                                        Phone Number is required
+                                    </md-error>
+                                    <md-error *ngIf="registerForm.controls.mobileNumber.hasError('pattern')">
+                                        Please enter a valid phone number
+                                    </md-error>
+                                </md-form-field>
+                            </div>
+                            <div fxLayout="row" class="input-pos" *ngIf="isVendor">
+                                <md-select fxFlex="50%" placeholder="Category" formControlName="categoryId" floatPlaceholder="always">
+                                    <md-option *ngFor="let category of categoryList" [value]="category.categoryId">{{category.name}}</md-option>
+                                    <md-error *ngIf="registerForm.controls.categoryId.hasError('required')">
+                                        Category is required
+                                    </md-error>
+                                </md-select>
+                            </div>
+                            <div fxLayout="row" class="input-pos" fxLayoutAlign="flex-start center">
+                                <md-form-field fxFlex="48%">
+                                    <input mdInput placeholder="Password" type="password" formControlName="password">
+                                    <md-error *ngIf="registerForm.controls.password.hasError('required')">
+                                    Password is required
+                                    </md-error>
+                                </md-form-field>
+                            </div>
+                            <div fxLayout="row" class="input-pos" fxLayoutAlign="flex-start center">
+                                <md-form-field fxFlex="48%">
+                                    <input mdInput placeholder="Confirm Password" type="password">
+                                </md-form-field>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="action" fxLayout="column" fxLayoutAlign="center center">
+                    <button md-raised-button class="btn" (click)="register()">
+                        <md-icon class="icon">person</md-icon>REGISTER
+                    </button>
+                    <div class="link">
+                        <a routerLink="/home/login">GO BACK TO LOGIN</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
