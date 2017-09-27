@@ -11,7 +11,6 @@ export class AuthGaurdService implements CanActivate {
   constructor(private auth: AuthenticationService, private router: Router) { }
 
   canActivate() {
-    console.log('test');
     if (localStorage.cre && JSON.parse(localStorage.cre).access_token) {
       return true;
     }

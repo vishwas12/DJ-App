@@ -63,6 +63,16 @@ export class AuthenticationService {
     });
   }
 
+  refreshToken(auth) {
+    this.OauthApiServiceService.refreshToken(auth).subscribe((response: any) => {
+      if (response) {
+        this.setAuthenticationData(response);
+        this.setRoles(response);
+        this.isAuthenticatedSubject.next(true);
+      }
+    });
+  }
+
   setAuthenticationData(data) {
     const cre: any = {
       access_token: data.access_token,

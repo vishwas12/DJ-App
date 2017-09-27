@@ -2,10 +2,13 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MaterialModule } from '@angular/material';
 import { AllMaterialModulesModule } from './all-material-modules/all-material-modules.module';
+import { NgIdleKeepaliveModule } from '@ng-idle/keepalive';
+import { MomentModule } from 'angular2-moment';
 
 import { AppComponent } from './app.component';
 import { RegisterComponent } from './components/register/register.component';
@@ -34,6 +37,7 @@ import { BasicDetailsComponent } from './components/vendor/basic-details/basic-d
 import { CompanyComponent } from './components/vendor/company/company.component';
 import { EquipmentsComponent } from './components/vendor/equipments/equipments.component';
 import { VendorHeaderComponent } from './components/Shared/components/vendor-header/vendor-header.component';
+import { CompareToDirective } from './components/Shared/directives/compare-to.directive';
 
 @NgModule({
   declarations: [
@@ -52,17 +56,21 @@ import { VendorHeaderComponent } from './components/Shared/components/vendor-hea
     BasicDetailsComponent,
     CompanyComponent,
     EquipmentsComponent,
-    VendorHeaderComponent
+    VendorHeaderComponent,
+    CompareToDirective
   ],
   imports: [
     BrowserModule,
     NoopAnimationsModule,
     HttpClientModule,
+    HttpModule,
     FormsModule,
     ReactiveFormsModule,
     AppRoutingModule,
     FlexLayoutModule,
     AllMaterialModulesModule,
+    MomentModule,
+    NgIdleKeepaliveModule.forRoot(),
     CategoryModule
   ],
   providers: [{

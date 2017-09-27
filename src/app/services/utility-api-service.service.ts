@@ -16,6 +16,12 @@ export class UtilityApiServiceService {
     return this.http.post(url, null, {params});
   }
 
+  checkEmailExist(data) {
+    const url: string = rootUrl + '/api/validateEmail';
+    const params = new HttpParams().set('email', data);
+    return this.http.get(url, {params});
+  }
+
   verifyEmail(uuid, userType, userId) {
     const url: string = rootUrl + '/api/verifyEmail';
     const params = new HttpParams().set('code', uuid)

@@ -19,7 +19,12 @@ export class VendorApiserviceService {
 
   registerVendor(data) {
     const url: string = rootUrl + '/vendor/Signup';
-    return this.http.post(url, data);
+    return this.http.post(url, data).catch(this.handleError);
+  }
+
+  getBasicDetails() {
+    const url: string = rootUrl + '/vendor/details';
+    return this.http.get(url).catch(this.handleError);
   }
 
   private handleError(error: any): Promise<any> {

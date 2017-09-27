@@ -32,7 +32,7 @@
                             </div>
                             <div fxLayout="row" class="input-pos" fxLayoutAlign="space-between center">
                                 <md-form-field fxFlex="48%">
-                                  <input mdInput placeholder="Email" type="email" formControlName="email">
+                                  <input (blur)="checkEmailExist()" mdInput placeholder="Email" type="email" formControlName="email">
                                   <md-error *ngIf="registerForm.controls.email.hasError('required')">
                                     Email is required
                                   </md-error>
@@ -60,7 +60,7 @@
                             </div>
                             <div fxLayout="row" class="input-pos" fxLayoutAlign="flex-start center">
                                 <md-form-field fxFlex="48%">
-                                    <input mdInput placeholder="Password" type="password" formControlName="password">
+                                    <input mdInput placeholder="Password" type="password" formControlName="password" appCompareTo="confirmPassword" reverse="true">
                                     <md-error *ngIf="registerForm.controls.password.hasError('required')">
                                     Password is required
                                     </md-error>
@@ -68,7 +68,13 @@
                             </div>
                             <div fxLayout="row" class="input-pos" fxLayoutAlign="flex-start center">
                                 <md-form-field fxFlex="48%">
-                                    <input mdInput placeholder="Confirm Password" type="password">
+                                    <input mdInput placeholder="Confirm Password" formControlName="confirmPassword" appCompareTo="password" type="password">
+                                    <md-error *ngIf="registerForm.controls.confirmPassword.hasError('required')">
+                                        Confirm Password is required
+                                    </md-error>
+                                    <md-error *ngIf="registerForm.controls.confirmPassword._status==='INVALID'">
+                                        Password does not match
+                                    </md-error>
                                 </md-form-field>
                             </div>
                         </form>
