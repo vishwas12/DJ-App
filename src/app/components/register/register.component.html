@@ -32,12 +32,15 @@
                             </div>
                             <div fxLayout="row" class="input-pos" fxLayoutAlign="space-between center">
                                 <md-form-field fxFlex="48%">
-                                  <input (blur)="checkEmailExist()" mdInput placeholder="Email" type="email" formControlName="email">
+                                  <input appValidateOnblur appEmailExist mdInput placeholder="Email" type="email" formControlName="email">
                                   <md-error *ngIf="registerForm.controls.email.hasError('required')">
                                     Email is required
                                   </md-error>
                                   <md-error *ngIf="registerForm.controls.email.hasError('pattern')">
                                     Please enter a valid email
+                                  </md-error>
+                                  <md-error *ngIf="registerForm.controls.email._status === 'INVALID'">
+                                    This email has been already taken.
                                   </md-error>
                                 </md-form-field>
                                 <md-form-field fxFlex="48%">
@@ -53,9 +56,9 @@
                             <div fxLayout="row" class="input-pos" *ngIf="isVendor">
                                 <md-select fxFlex="50%" placeholder="Category" formControlName="categoryId" floatPlaceholder="always">
                                     <md-option *ngFor="let category of categoryList" [value]="category.categoryId">{{category.name}}</md-option>
-                                    <md-error *ngIf="registerForm.controls.categoryId.hasError('required')">
+                                    <!-- <md-error *ngIf="registerForm.controls.categoryId.hasError('required')">
                                         Category is required
-                                    </md-error>
+                                    </md-error> -->
                                 </md-select>
                             </div>
                             <div fxLayout="row" class="input-pos" fxLayoutAlign="flex-start center">

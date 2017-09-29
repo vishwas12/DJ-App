@@ -1,3 +1,39 @@
-<p>
-  basic-details works!
-</p>
+<div class="basicDetails" fxLayout="row">
+  <div class="leftContainer" fxFlex="20%">
+    <div class="imageContainer" fxLayout="column">
+      <img src="assets/nature2.jpg" alt="" style="width:160px;height:150px;">
+      <h2 fxFlexOffset="15px">{{basicDetails.category}}</h2>
+    </div>
+  </div>
+  <div class="rigthContainer" fxFlex="80%">
+    <div fxLayout="column">
+        <div fxLayout="row" *ngIf="update" fxLayoutAlign="end center">
+            <button (click)="save()" md-raised-button color="primary">Save</button>
+            <button fxFlexOffset="20px" (click)="toggle('cancel')" md-raised-button color="warn">Cancel</button>
+        </div>
+        <div fxLayout="row" *ngIf="!update" fxLayoutAlign="end center">
+            <button (click)="toggle('update')" md-raised-button color="primary">Update</button>
+        </div>
+        <div fxLayout="row" >
+            <form (ngSubmit)="onSubmit()" novalidate fxFlex="100%" #basicDetails="ngForm">
+              <div fxLayout="row" class="input-pos" fxLayoutAlign="space-between center">
+                  <!-- <md-form-field fxFlex="48%" class="field-pos"> -->
+                    <input [(ngModel)]="basicDetails.firstName" name="firstName" #firstName="ngModel"  placeholder="First Name" type="text">
+                  <!-- </md-form-field> -->
+                  <!-- <md-form-field fxFlex="48%" class="field-pos">
+                      <input mdInput placeholder="Last Name" type="text">
+                  </md-form-field> -->
+              </div>
+              <!-- <div fxLayout="row" class="input-pos" fxLayoutAlign="space-between center">
+                  <md-form-field fxFlex="48%" class="field-pos">
+                    <input mdInput placeholder="Email" type="email">
+                  </md-form-field>
+                  <md-form-field fxFlex="48%" class="field-pos">
+                      <input mdInput placeholder="Phone Number" type="text">
+                  </md-form-field>
+              </div> -->
+            </form>
+        </div>
+    </div>
+  </div>
+</div>

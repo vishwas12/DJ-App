@@ -38,6 +38,8 @@ import { CompanyComponent } from './components/vendor/company/company.component'
 import { EquipmentsComponent } from './components/vendor/equipments/equipments.component';
 import { VendorHeaderComponent } from './components/Shared/components/vendor-header/vendor-header.component';
 import { CompareToDirective } from './components/Shared/directives/compare-to.directive';
+import { EmailExistDirective } from './components/Shared/directives/email-exist.directive';
+import { ValidateOnblurDirective } from './components/Shared/directives/validate-onblur.directive';
 
 @NgModule({
   declarations: [
@@ -57,7 +59,9 @@ import { CompareToDirective } from './components/Shared/directives/compare-to.di
     CompanyComponent,
     EquipmentsComponent,
     VendorHeaderComponent,
-    CompareToDirective
+    CompareToDirective,
+    EmailExistDirective,
+    ValidateOnblurDirective
   ],
   imports: [
     BrowserModule,

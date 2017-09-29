@@ -81,7 +81,8 @@ export class RegisterComponent implements OnInit {
 
   register() {
     const data = this.registerForm.value;
-    if (this.isVendor) {
+    console.log(this.registerForm);
+    /* if (this.isVendor) {
       this.vendorApiService.registerVendor(data).subscribe((response: any) => {
         if (response && response.success) {
           console.log(response);
@@ -90,7 +91,7 @@ export class RegisterComponent implements OnInit {
           console.log(response);
         }
       });
-    }
+    } */
   }
 
   checkEmailExist() {

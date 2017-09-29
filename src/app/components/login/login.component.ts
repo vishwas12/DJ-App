@@ -16,6 +16,7 @@ export class LoginComponent implements OnInit {
   constructor(private AuthenticationService: AuthenticationService) { }
 
   ngOnInit() {
+    this.AuthenticationService.cleanStorageData();
     this.createFormControls();
   }
 
