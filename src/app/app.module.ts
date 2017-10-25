@@ -40,6 +40,7 @@ import { VendorHeaderComponent } from './components/Shared/components/vendor-hea
 import { CompareToDirective } from './components/Shared/directives/compare-to.directive';
 import { EmailExistDirective } from './components/Shared/directives/email-exist.directive';
 import { ValidateOnblurDirective } from './components/Shared/directives/validate-onblur.directive';
+import { DashboardComponent } from './components/vendor/dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -61,7 +62,8 @@ import { ValidateOnblurDirective } from './components/Shared/directives/validate
     VendorHeaderComponent,
     CompareToDirective,
     EmailExistDirective,
-    ValidateOnblurDirective
+    ValidateOnblurDirective,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,

@@ -12,6 +12,7 @@ import { DetailsComponent } from './components/vendor/details/details.component'
 import { BasicDetailsComponent } from './components/vendor/basic-details/basic-details.component';
 import { CompanyComponent } from './components/vendor/company/company.component';
 import { EquipmentsComponent } from './components/vendor/equipments/equipments.component';
+import { DashboardComponent } from './components/vendor/dashboard/dashboard.component';
 
 import { AuthGaurdService } from './services/auth-gaurd.service';
 
@@ -63,7 +64,7 @@ const routes: Routes = [
         children: [
             {
                 path: 'dashboard',
-                component: LoginComponent
+                component: DashboardComponent
             },
             {
                 path: 'details',
@@ -95,12 +96,12 @@ const routes: Routes = [
             },
             {
                 path: '',
-                redirectTo: '/vendor/details/user',
+                redirectTo: '/vendor/dashboard',
                 pathMatch: 'full'
             },
             {
                 path: '**',
-                component: LoginComponent
+                component: DashboardComponent
             }
         ]
     },

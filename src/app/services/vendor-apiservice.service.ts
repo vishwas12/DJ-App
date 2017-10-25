@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClientModule, HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { HttpClientModule, HttpClient, HttpErrorResponse, HttpParams } from '@angular/common/http';
 import 'rxjs/add/operator/toPromise';
 import 'rxjs/add/operator/map';
 
@@ -25,6 +25,23 @@ export class VendorApiserviceService {
   getBasicDetails() {
     const url: string = rootUrl + '/vendor/details';
     return this.http.get(url).catch(this.handleError);
+  }
+
+  getLocations(areaCode) {
+    const url: string = rootUrl + '/api/fetchByPincode';
+    const params = new HttpParams().set('pinCode', areaCode);
+    return this.http.get(url, {params}).catch(this.handleError);
+  }
+
+  getAllStates() {
+    const url: string = rootUrl + '/api/getStates';
+    return this.http.get(url).catch(this.handleError);
+  }
+
+  getCitiesByState(stateId) {
+    const url: string = rootUrl + '/api/getCitiesByStateId';
+    const params = new HttpParams().set('stateId', stateId);
+    return this.http.get(url, {params}).catch(this.handleError);
   }
 
   private handleError(error: any): Promise<any> {

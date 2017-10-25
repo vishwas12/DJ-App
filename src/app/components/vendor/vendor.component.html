@@ -1,15 +1,35 @@
-<app-vendor-header></app-vendor-header>
-<md-sidenav-container style="height: calc(100vh - 64px)">
-  <md-sidenav mode="side" opened="true">
-    <ul>
-      <li>Dashboard</li>
-      <li>Basic Details</li>
-      <li>Pricing</li>
-      <li>Portfolio</li>
-      <li>Settings</li>
-    </ul>
+<app-vendor-header (onSidenav)="sidenav.toggle()"></app-vendor-header>
+<md-sidenav-container class="side-nav-container">
+  <md-sidenav class="sidenav-menu" #sidenav mode="{{isMobileView?'over':'side'}}" opened="{{!isMobileView}}" disableClose="{{!isMobileView}}">
+    <md-nav-list>
+      <md-list-item routerLink="/vendor/dashboard" routerLinkActive="active-link" (click)="onLinkClick()" class="item-link">
+        <md-icon class="active-icon" md-list-icon>home</md-icon>
+        <h4 md-line style="width: 100%;">Dashboard</h4>
+      </md-list-item>
+      <md-divider></md-divider>
+      <md-list-item routerLink="/vendor/details/user" routerLinkActive="active-link"  (click)="onLinkClick()" class="item-link">
+        <md-icon class="active-icon" md-list-icon>person_outline</md-icon>
+        <h4 md-line style="width: 100%;">Basic Details</h4>
+      </md-list-item>
+      <md-divider></md-divider>
+      <md-list-item (click)="onLinkClick()" class="item-link">
+        <md-icon class="active-icon" md-list-icon>monetization_on</md-icon>
+        <h4 md-line style="width: 100%;">Pricing</h4>
+      </md-list-item>
+      <md-divider></md-divider>
+      <md-list-item (click)="onLinkClick()" class="item-link">
+        <md-icon class="active-icon" md-list-icon>business_center</md-icon>
+        <h4 md-line style="width: 100%;">Portfolio</h4>
+      </md-list-item>
+      <md-divider></md-divider>
+      <md-list-item (click)="onLinkClick()" style="color:rgba(255,255,255,0.87);">
+        <md-icon class="active-icon" md-list-icon>settings_applications</md-icon>
+        <h4 md-line style="width: 100%;">Settings</h4>
+      </md-list-item>
+      <md-divider></md-divider>
+    </md-nav-list>
   </md-sidenav>
-  <div class="my-content" style="padding: 20px;background: white;border: 1px solid #ccc;margin: 10px;height: calc(100vh - 94px);overflow-x: hidden;">
+  <div class="my-content" style="background: white;border: 1px solid #ccc;height: calc(100vh - 68px);overflow-x: hidden;">
     <router-outlet></router-outlet>
   </div>
 </md-sidenav-container>

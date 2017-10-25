@@ -38,4 +38,9 @@ export class UtilityApiServiceService {
     return this.http.get(url, {params});
   }
 
+  logout() {
+    const url: string = rootUrl + '/user/logout';
+    return this.http.post(url, null);
+  }
+
 }

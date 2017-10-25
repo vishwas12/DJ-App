@@ -1,0 +1,17 @@
+.side-nav-container{
+  height: calc(100vh - 68px);
+  .sidenav-menu{
+    width: 200px;
+    background:#263238;
+    .item-link{
+      background:#263238;color:rgba(255,255,255,0.87);
+    }
+    .active-link{
+      color: white;
+      border-left: 2px solid #2196F3;
+      .active-icon{
+        color: #F44336;
+      }
+    }
+  }
+}

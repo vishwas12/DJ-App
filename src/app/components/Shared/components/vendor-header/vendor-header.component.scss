@@ -1,0 +1,17 @@
+.appbar{
+  background:white;
+  border-bottom:4px solid #F44336;
+  color:black;
+  .example-spacer{
+    flex: 1 1 auto;
+  }
+  .example-icon{
+    padding: 0 14px;
+    cursor: pointer;
+    padding: 20px 14px;
+
+    &.hover{
+      color: red;
+    }
+  }
+}

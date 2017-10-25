@@ -47,7 +47,7 @@ export class AuthenticationService {
         this.setRoles(response);
         this.isAuthenticatedSubject.next(true);
         if (response.roles[0] === 'ROLE_VENDOR') {
-          this.route.navigateByUrl('/vendor/details/user');
+          this.route.navigateByUrl('/vendor/dashboard');
         }else if (response.roles[0] === 'ROLE_USER') {
 
         }
@@ -70,6 +70,12 @@ export class AuthenticationService {
         this.setRoles(response);
         this.isAuthenticatedSubject.next(true);
       }
+    });
+  }
+
+  logoutUser() {
+    this.UtilityApiServiceService.logout().subscribe((response: any) => {
+      console.log(response);
     });
   }
 
