@@ -14,72 +14,72 @@
   <div class="rigthContainer" fxFlex="80%">
     <div fxLayout="column">
         <div fxLayout="row" *ngIf="update" fxLayoutAlign="end center">
-            <button (click)="save()" md-raised-button color="primary">Save</button>
-            <button fxFlexOffset="20px" (click)="toggle('cancel')" md-raised-button color="warn">Cancel</button>
+            <button (click)="save()" mat-raised-button color="primary">Save</button>
+            <button fxFlexOffset="20px" (click)="toggle('cancel')" mat-raised-button color="warn">Cancel</button>
         </div>
         <div fxLayout="row" *ngIf="!update" fxLayoutAlign="end center">
-            <button (click)="toggle('update')" md-raised-button color="primary">Update</button>
+            <button (click)="toggle('update')" mat-raised-button color="primary">Update</button>
         </div>
         <div fxLayout="row" >
           <form [formGroup]="basicDetailsForm" novalidate fxFlex="100%">
             <div fxLayout="row" class="input-pos" fxLayoutAlign="space-between center">
-                <md-form-field fxFlex="48%">
-                    <input mdInput placeholder="Email" type="email" formControlName="email">
-                </md-form-field>
+                <mat-form-field fxFlex="48%">
+                    <input matInput placeholder="Email" type="email" formControlName="email">
+                </mat-form-field>
             </div>
             <div fxLayout="row" class="input-pos" fxLayoutAlign="space-between center">
-                <md-form-field fxFlex="48%" class="field-pos">
-                  <input mdInput placeholder="First Name" type="text" formControlName="firstName">
-                  <md-error *ngIf="basicDetailsForm.controls.firstName.hasError('required')">
+                <mat-form-field fxFlex="48%" class="field-pos">
+                  <input matInput placeholder="First Name" type="text" formControlName="firstName">
+                  <mat-error *ngIf="basicDetailsForm.controls.firstName.hasError('required')">
                     First Name is required
-                  </md-error>
-                </md-form-field>
-                <md-form-field fxFlex="48%" class="field-pos">
-                    <input mdInput placeholder="Last Name" type="text" formControlName="lastName">
-                </md-form-field>
+                  </mat-error>
+                </mat-form-field>
+                <mat-form-field fxFlex="48%" class="field-pos">
+                    <input matInput placeholder="Last Name" type="text" formControlName="lastName">
+                </mat-form-field>
             </div>
             <div fxLayout="row" class="input-pos" fxLayoutAlign="space-between center">
-                <md-form-field fxFlex="48%" class="field-pos">
-                  <span mdPrefix>+91 &nbsp;</span>
-                  <input mdInput placeholder="Mobile Number" type="text" formControlName="mobileNumber">
-                  <md-error *ngIf="basicDetailsForm.controls.mobileNumber.hasError('required')">
+                <mat-form-field fxFlex="48%" class="field-pos">
+                  <span matPrefix>+91 &nbsp;</span>
+                  <input matInput placeholder="Mobile Number" type="text" formControlName="mobileNumber">
+                  <mat-error *ngIf="basicDetailsForm.controls.mobileNumber.hasError('required')">
                     Mobile Number is required.
-                  </md-error>
-                  <md-error *ngIf="basicDetailsForm.controls.mobileNumber.hasError('pattern')">
+                  </mat-error>
+                  <mat-error *ngIf="basicDetailsForm.controls.mobileNumber.hasError('pattern')">
                     Please enter a valid mobile number.
-                  </md-error>
-                </md-form-field>
+                  </mat-error>
+                </mat-form-field>
             </div>
             <div fxLayout="row">
               <h2 style="text-decoration: underline;text-transform:uppercase;">Address</h2>
             </div>
             <div formGroupName="address">
               <div fxLayout="row">
-                <md-form-field fxFlex="48%" class="field-pos">
-                    <input mdInput placeholder="Area Code" type="number" formControlName="pin">
-                    <md-error *ngIf="basicDetailsForm.controls.address.controls.pin.hasError('required')">
+                <mat-form-field fxFlex="48%" class="field-pos">
+                    <input matInput placeholder="Area Code" type="number" formControlName="pin">
+                    <mat-error *ngIf="basicDetailsForm.controls.address.controls.pin.hasError('required')">
                         Area Code is required
-                    </md-error>
-                    <md-error *ngIf="basicDetailsForm.controls.address.controls.pin.hasError('minlength')">
+                    </mat-error>
+                    <mat-error *ngIf="basicDetailsForm.controls.address.controls.pin.hasError('minlength')">
                         Please enter a valid area code.
-                    </md-error>
-                    <md-error *ngIf="basicDetailsForm.controls.address.controls.pin.hasError('maxlength')">
+                    </mat-error>
+                    <mat-error *ngIf="basicDetailsForm.controls.address.controls.pin.hasError('maxlength')">
                         Please enter a valid area code.
-                    </md-error>
-                </md-form-field>
-                <button (click)="fetchLocations()" md-raised-button color="primary">Check</button>
+                    </mat-error>
+                </mat-form-field>
+                <button (click)="fetchLocations()" mat-raised-button color="primary">Check</button>
               </div>
               <div fxLayout="row">
-                <md-select (change)="getCities()" placeholder="State" formControlName="state">
-                  <md-option *ngFor="let state of states" [value]="state.stateId">
+                <mat-select (change)="getCities()" placeholder="State" formControlName="state">
+                  <mat-option *ngFor="let state of states" [value]="state.stateId">
                     {{ state.name }}
-                  </md-option>
-                </md-select>
-                <md-select placeholder="City" formControlName="city">
-                  <md-option *ngFor="let city of cities" [value]="city.cityId">
+                  </mat-option>
+                </mat-select>
+                <mat-select placeholder="City" formControlName="city">
+                  <mat-option *ngFor="let city of cities" [value]="city.cityId">
                     {{ city.cityName }}
-                  </md-option>
-                </md-select>
+                  </mat-option>
+                </mat-select>
               </div>
             </div>
           </form>

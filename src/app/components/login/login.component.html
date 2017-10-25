@@ -20,30 +20,30 @@
                 <div fxLayout="row">
                     <form [formGroup]="loginForm" novalidate fxFlex="100%">
                         <div fxLayout="row" class="input-pos">
-                            <md-form-field fxFlex="100%" class="field-pos">
-                              <input mdInput placeholder="Email" type="text" formControlName="email">
-                              <md-error *ngIf="loginForm.controls.email.hasError('pattern')">
+                            <mat-form-field fxFlex="100%" class="field-pos">
+                              <input matInput placeholder="Email" type="text" formControlName="email">
+                              <mat-error *ngIf="loginForm.controls.email.hasError('pattern')">
                                 Please enter a valid email address
-                              </md-error>
-                              <md-error *ngIf="loginForm.controls.email.hasError('required')">
+                              </mat-error>
+                              <mat-error *ngIf="loginForm.controls.email.hasError('required')">
                                 Email is required
-                              </md-error>
-                            </md-form-field>
+                              </mat-error>
+                            </mat-form-field>
                         </div>
                         <div fxLayout="row" class="input-pos">
-                            <md-form-field fxFlex="100%">
-                              <input mdInput placeholder="Password" type="password" formControlName="password">
-                              <md-error *ngIf="loginForm.controls.password.hasError('required')">
+                            <mat-form-field fxFlex="100%">
+                              <input matInput placeholder="Password" type="password" formControlName="password">
+                              <mat-error *ngIf="loginForm.controls.password.hasError('required')">
                                 Password is required
-                              </md-error>
-                            </md-form-field>
+                              </mat-error>
+                            </mat-form-field>
                         </div>
                     </form>
                 </div>
             </div>
             <div class="action" fxLayout="column" fxLayoutAlign="center center">
-                <button md-raised-button class="btn" (click)="login()">
-                    <md-icon class="icon">person</md-icon>LOGIN
+                <button mat-raised-button class="btn" (click)="login()">
+                    <mat-icon class="icon">person</mat-icon>LOGIN
                 </button>
                 <div class="link">
                     <a routerLink="/home/register">Create Account</a>

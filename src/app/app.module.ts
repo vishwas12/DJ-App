@@ -5,7 +5,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { MaterialModule } from '@angular/material';
+import { MATERIAL_COMPATIBILITY_MODE } from '@angular/material';
 import { AllMaterialModulesModule } from './all-material-modules/all-material-modules.module';
 import { NgIdleKeepaliveModule } from '@ng-idle/keepalive';
 import { MomentModule } from 'angular2-moment';
@@ -83,7 +83,11 @@ import { DashboardComponent } from './components/vendor/dashboard/dashboard.comp
     provide: HTTP_INTERCEPTORS,
     useClass: RequestInterceptorService,
     multi: true
-  }, VendorApiserviceService, OauthApiServiceService, AuthenticationService, UtilityApiServiceService, AuthGaurdService],
+  }, {
+    provide: MATERIAL_COMPATIBILITY_MODE,
+    useValue: true
+  },
+  VendorApiserviceService, OauthApiServiceService, AuthenticationService, UtilityApiServiceService, AuthGaurdService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

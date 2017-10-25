@@ -20,72 +20,72 @@
                     <div fxLayout="row">
                         <form [formGroup]="registerForm" novalidate fxFlex="100%">
                             <div fxLayout="row" class="input-pos" fxLayoutAlign="space-between center">
-                                <md-form-field fxFlex="48%" class="field-pos">
-                                  <input mdInput placeholder="First Name" type="text" formControlName="firstName">
-                                  <md-error *ngIf="registerForm.controls.firstName.hasError('required')">
+                                <mat-form-field fxFlex="48%" class="field-pos">
+                                  <input matInput placeholder="First Name" type="text" formControlName="firstName">
+                                  <mat-error *ngIf="registerForm.controls.firstName.hasError('required')">
                                     First Name is required
-                                  </md-error>
-                                </md-form-field>
-                                <md-form-field fxFlex="48%" class="field-pos">
-                                    <input mdInput placeholder="Last Name" type="text" formControlName="lastName">
-                                </md-form-field>
+                                  </mat-error>
+                                </mat-form-field>
+                                <mat-form-field fxFlex="48%" class="field-pos">
+                                    <input matInput placeholder="Last Name" type="text" formControlName="lastName">
+                                </mat-form-field>
                             </div>
                             <div fxLayout="row" class="input-pos" fxLayoutAlign="space-between center">
-                                <md-form-field fxFlex="48%">
-                                  <input appValidateOnblur appEmailExist mdInput placeholder="Email" type="email" formControlName="email">
-                                  <md-error *ngIf="registerForm.controls.email.hasError('required')">
+                                <mat-form-field fxFlex="48%">
+                                  <input appValidateOnblur appEmailExist matInput placeholder="Email" type="email" formControlName="email">
+                                  <mat-error *ngIf="registerForm.controls.email.hasError('required')">
                                     Email is required
-                                  </md-error>
-                                  <md-error *ngIf="registerForm.controls.email.hasError('pattern')">
+                                  </mat-error>
+                                  <mat-error *ngIf="registerForm.controls.email.hasError('pattern')">
                                     Please enter a valid email
-                                  </md-error>
-                                  <md-error *ngIf="registerForm.controls.email._status === 'INVALID'">
+                                  </mat-error>
+                                  <mat-error *ngIf="registerForm.controls.email._status === 'INVALID'">
                                     This email has been already taken.
-                                  </md-error>
-                                </md-form-field>
-                                <md-form-field fxFlex="48%">
-                                    <input mdInput placeholder="Phone Number" type="text" formControlName="mobileNumber">
-                                    <md-error *ngIf="registerForm.controls.mobileNumber.hasError('required')">
+                                  </mat-error>
+                                </mat-form-field>
+                                <mat-form-field fxFlex="48%">
+                                    <input matInput placeholder="Phone Number" type="text" formControlName="mobileNumber">
+                                    <mat-error *ngIf="registerForm.controls.mobileNumber.hasError('required')">
                                         Phone Number is required
-                                    </md-error>
-                                    <md-error *ngIf="registerForm.controls.mobileNumber.hasError('pattern')">
+                                    </mat-error>
+                                    <mat-error *ngIf="registerForm.controls.mobileNumber.hasError('pattern')">
                                         Please enter a valid phone number
-                                    </md-error>
-                                </md-form-field>
+                                    </mat-error>
+                                </mat-form-field>
                             </div>
                             <div fxLayout="row" class="input-pos" *ngIf="isVendor">
-                                <md-select fxFlex="50%" placeholder="Category" formControlName="categoryId" floatPlaceholder="always">
-                                    <md-option *ngFor="let category of categoryList" [value]="category.categoryId">{{category.name}}</md-option>
-                                    <!-- <md-error *ngIf="registerForm.controls.categoryId.hasError('required')">
+                                <mat-select fxFlex="50%" placeholder="Category" formControlName="categoryId" floatPlaceholder="always">
+                                    <mat-option *ngFor="let category of categoryList" [value]="category.categoryId">{{category.name}}</mat-option>
+                                    <!-- <mat-error *ngIf="registerForm.controls.categoryId.hasError('required')">
                                         Category is required
-                                    </md-error> -->
-                                </md-select>
+                                    </mat-error> -->
+                                </mat-select>
                             </div>
                             <div fxLayout="row" class="input-pos" fxLayoutAlign="flex-start center">
-                                <md-form-field fxFlex="48%">
-                                    <input mdInput placeholder="Password" type="password" formControlName="password" appCompareTo="confirmPassword" reverse="true">
-                                    <md-error *ngIf="registerForm.controls.password.hasError('required')">
+                                <mat-form-field fxFlex="48%">
+                                    <input matInput placeholder="Password" type="password" formControlName="password" appCompareTo="confirmPassword" reverse="true">
+                                    <mat-error *ngIf="registerForm.controls.password.hasError('required')">
                                     Password is required
-                                    </md-error>
-                                </md-form-field>
+                                    </mat-error>
+                                </mat-form-field>
                             </div>
                             <div fxLayout="row" class="input-pos" fxLayoutAlign="flex-start center">
-                                <md-form-field fxFlex="48%">
-                                    <input mdInput placeholder="Confirm Password" formControlName="confirmPassword" appCompareTo="password" type="password">
-                                    <md-error *ngIf="registerForm.controls.confirmPassword.hasError('required')">
+                                <mat-form-field fxFlex="48%">
+                                    <input matInput placeholder="Confirm Password" formControlName="confirmPassword" appCompareTo="password" type="password">
+                                    <mat-error *ngIf="registerForm.controls.confirmPassword.hasError('required')">
                                         Confirm Password is required
-                                    </md-error>
-                                    <md-error *ngIf="registerForm.controls.confirmPassword._status==='INVALID'">
+                                    </mat-error>
+                                    <mat-error *ngIf="registerForm.controls.confirmPassword._status==='INVALID'">
                                         Password does not match
-                                    </md-error>
-                                </md-form-field>
+                                    </mat-error>
+                                </mat-form-field>
                             </div>
                         </form>
                     </div>
                 </div>
                 <div class="action" fxLayout="column" fxLayoutAlign="center center">
-                    <button md-raised-button class="btn" (click)="register()">
-                        <md-icon class="icon">person</md-icon>REGISTER
+                    <button mat-raised-button class="btn" (click)="register()">
+                        <mat-icon class="icon">person</mat-icon>REGISTER
                     </button>
                     <div class="link">
                         <a routerLink="/home/login">GO BACK TO LOGIN</a>

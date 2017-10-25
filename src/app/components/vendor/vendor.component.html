@@ -1,35 +1,35 @@
 <app-vendor-header (onSidenav)="sidenav.toggle()"></app-vendor-header>
-<md-sidenav-container class="side-nav-container">
-  <md-sidenav class="sidenav-menu" #sidenav mode="{{isMobileView?'over':'side'}}" opened="{{!isMobileView}}" disableClose="{{!isMobileView}}">
-    <md-nav-list>
-      <md-list-item routerLink="/vendor/dashboard" routerLinkActive="active-link" (click)="onLinkClick()" class="item-link">
-        <md-icon class="active-icon" md-list-icon>home</md-icon>
-        <h4 md-line style="width: 100%;">Dashboard</h4>
-      </md-list-item>
-      <md-divider></md-divider>
-      <md-list-item routerLink="/vendor/details/user" routerLinkActive="active-link"  (click)="onLinkClick()" class="item-link">
-        <md-icon class="active-icon" md-list-icon>person_outline</md-icon>
-        <h4 md-line style="width: 100%;">Basic Details</h4>
-      </md-list-item>
-      <md-divider></md-divider>
-      <md-list-item (click)="onLinkClick()" class="item-link">
-        <md-icon class="active-icon" md-list-icon>monetization_on</md-icon>
-        <h4 md-line style="width: 100%;">Pricing</h4>
-      </md-list-item>
-      <md-divider></md-divider>
-      <md-list-item (click)="onLinkClick()" class="item-link">
-        <md-icon class="active-icon" md-list-icon>business_center</md-icon>
-        <h4 md-line style="width: 100%;">Portfolio</h4>
-      </md-list-item>
-      <md-divider></md-divider>
-      <md-list-item (click)="onLinkClick()" style="color:rgba(255,255,255,0.87);">
-        <md-icon class="active-icon" md-list-icon>settings_applications</md-icon>
-        <h4 md-line style="width: 100%;">Settings</h4>
-      </md-list-item>
-      <md-divider></md-divider>
-    </md-nav-list>
-  </md-sidenav>
+<mat-sidenav-container class="side-nav-container">
+  <mat-sidenav class="sidenav-menu" #sidenav mode="{{isMobileView?'over':'side'}}" opened="{{!isMobileView}}" disableClose="{{!isMobileView}}">
+    <mat-nav-list>
+      <mat-list-item routerLink="/vendor/dashboard" routerLinkActive="active-link" (click)="onLinkClick()" class="item-link">
+        <mat-icon class="active-icon" mat-list-icon>home</mat-icon>
+        <h4 matLine style="width: 100%;">Dashboard</h4>
+      </mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item routerLink="/vendor/details/user" routerLinkActive="active-link"  (click)="onLinkClick()" class="item-link">
+        <mat-icon class="active-icon" mat-list-icon>person_outline</mat-icon>
+        <h4 matLine style="width: 100%;">Basic Details</h4>
+      </mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item (click)="onLinkClick()" class="item-link">
+        <mat-icon class="active-icon" mat-list-icon>monetization_on</mat-icon>
+        <h4 matLine style="width: 100%;">Pricing</h4>
+      </mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item (click)="onLinkClick()" class="item-link">
+        <mat-icon class="active-icon" mat-list-icon>business_center</mat-icon>
+        <h4 matLine style="width: 100%;">Portfolio</h4>
+      </mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item (click)="onLinkClick()" style="color:rgba(255,255,255,0.87);">
+        <mat-icon class="active-icon" mat-list-icon>settings_applications</mat-icon>
+        <h4 matLine style="width: 100%;">Settings</h4>
+      </mat-list-item>
+      <mat-divider></mat-divider>
+    </mat-nav-list>
+  </mat-sidenav>
   <div class="my-content" style="background: white;border: 1px solid #ccc;height: calc(100vh - 68px);overflow-x: hidden;">
     <router-outlet></router-outlet>
   </div>
-</md-sidenav-container>
+</mat-sidenav-container>
