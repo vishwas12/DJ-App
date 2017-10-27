@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import {Observable} from 'rxjs/Observable';
+import 'rxjs/add/operator/startWith';
+import 'rxjs/add/operator/map';
 
 import { VendorApiserviceService } from '../../../services/vendor-apiservice.service';
 
@@ -29,6 +32,7 @@ export class BasicDetailsComponent implements OnInit {
   stateId = 0;
   stateByPin = 0;
   cityByPin: string;
+  filteredCities: Observable<string[]>;
 
   constructor(private VendorApiserviceService: VendorApiserviceService) {
     this.createFormControls();
@@ -144,11 +148,18 @@ export class BasicDetailsComponent implements OnInit {
     this.VendorApiserviceService.getCitiesByState(this.stateId).subscribe((response: any) => {
       this.cities = response.data;
       for (let i = 0; i < this.cities.length; i++) {
-        if (this.cities[i].cityName.toLowerCase() === this.cityByPin.toLowerCase()) {
+        if (this.cityByPin && this.cities[i].cityName.toLowerCase() === this.cityByPin.toLowerCase()) {
           this.basicDetailsForm.get('address').get('city').setValue(this.cities[i].cityId);
         }
       }
+      this.filteredCities = this.basicDetailsForm.get('address').get('city').valueChanges
+      .startWith(null).map(val => val ? this.filter(val) : this.cities.slice());
     });
   }
+
+  filter(val: string): string[] {
+    return this.cities.filter(city =>
+      city.cityName.toLowerCase().indexOf(val.toLowerCase()) === 0);
+ }
 
 }

@@ -1,55 +1,56 @@
 <div style="margin:20px;">
-  <div fxLayout="row">
+  <div fxLayout="row" fxLayoutAlign="space-between center">
 		<div fxLayout="column">
 			<h2>Welcome to Event Management</h2>
 			<h3>Complete your profile to get started</h3>
 		</div>
-		<div>
-				<mat-progress-bar mode="indeterminate"></mat-progress-bar>
+		<div fxFlex=30 fxLayout="column">
+			<mat-progress-bar mode="determinate" value="20" style="height:20px;border-radius:20px;"></mat-progress-bar>
+			<span style="margin-top:10px;">You have completed 20% of your profile</span>
 		</div>
   </div>
 	<div fxLayout="row" fxLayout.sm="column" fxLayout.xs="column" fxLayoutAlign="space-between center">
 		<div fxLayout="column" fxFlex="30" fxLayoutAlign="center center" style="padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    border-top: 5px solid green;">
+    border-top: 5px solid green;margin-bottom:20px;">
 			<img src="/assets/user-detail-card.svg" alt="" height="100">
 			<h2>Basic Details</h2>
 			<span style="text-align: center;
-			/* margin-bottom: 10px; */
-			padding-bottom: 15px;
-			margin-bottom: 15px;
-			border-bottom: 1px solid #ccc;">You need to provide your Address, Pnone Number etc.</span>
-			<a href="" style="text-decoration: none;
-			color: blue;">Add Details</a>
+			padding-bottom: 15px;">You need to provide your Address, Pnone Number etc.</span>
+			<div style="cursor:pointer;padding: 20px 11px;margin-bottom: -10px;width: 100%;text-align: center;background: rebeccapurple;color: white;border-bottom-left-radius: 4px;border-bottom-right-radius: 4px;display: flex;align-items: center;justify-content: center;">
+				<a routerLink="/vendor/details/user" routerLinkActive="active-link" style="text-decoration: none;
+				color: white;font-weight:500">Add Details</a>
+				<mat-icon class="example-icon" style="margin-left:10px;">arrow_forward</mat-icon>
+			</div>
 		</div>
 		<div fxLayout="column" fxFlex="30" fxLayoutAlign="center center" style="padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    border-top: 5px solid green;">
+    border-top: 5px solid green;margin-bottom:20px;">
 			<img src="/assets/user-detail-card.svg" alt="" height="100">
 			<h2>Basic Details</h2>
 			<span style="text-align: center;
-			/* margin-bottom: 10px; */
-			padding-bottom: 15px;
-			margin-bottom: 15px;
-			border-bottom: 1px solid #ccc;">You need to provide your Address, Pnone Number etc.</span>
-			<a href="" style="text-decoration: none;
-			color: blue;">Add Details</a>
+			padding-bottom: 15px;">You need to provide your Address, Pnone Number etc.</span>
+			<div style="cursor:pointer;padding: 20px 11px;margin-bottom: -10px;width: 100%;text-align: center;background: rebeccapurple;color: white;border-bottom-left-radius: 4px;border-bottom-right-radius: 4px;display: flex;align-items: center;justify-content: center;">
+				<a style="text-decoration: none;
+				color: white;font-weight:500">Add Details</a>
+				<mat-icon class="example-icon" style="margin-left:10px;">arrow_forward</mat-icon>
+			</div>
 		</div>
 		<div fxLayout="column" fxFlex="30" fxLayoutAlign="center center" style="padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    border-top: 5px solid green;">
+    border-top: 5px solid green;margin-bottom:20px;">
 			<img src="/assets/user-detail-card.svg" alt="" height="100">
 			<h2>Basic Details</h2>
 			<span style="text-align: center;
-			/* margin-bottom: 10px; */
-			padding-bottom: 15px;
-			margin-bottom: 15px;
-			border-bottom: 1px solid #ccc;">You need to provide your Address, Pnone Number etc.</span>
-			<a href="" style="text-decoration: none;
-			color: blue;">Add Details</a>
+			padding-bottom: 15px;">You need to provide your Address, Pnone Number etc.</span>
+			<div style="cursor:pointer;padding: 20px 11px;margin-bottom: -10px;width: 100%;text-align: center;background: rebeccapurple;color: white;border-bottom-left-radius: 4px;border-bottom-right-radius: 4px;display: flex;align-items: center;justify-content: center;">
+				<a style="text-decoration: none;
+				color: white;font-weight:500">Add Details</a>
+				<mat-icon class="example-icon" style="margin-left:10px;">arrow_forward</mat-icon>
+			</div>
 		</div>
 	</div>
 </div>

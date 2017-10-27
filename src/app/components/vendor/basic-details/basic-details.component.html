@@ -70,16 +70,28 @@
                 <button (click)="fetchLocations()" mat-raised-button color="primary">Check</button>
               </div>
               <div fxLayout="row">
-                <mat-select (change)="getCities()" placeholder="State" formControlName="state">
-                  <mat-option *ngFor="let state of states" [value]="state.stateId">
-                    {{ state.name }}
-                  </mat-option>
-                </mat-select>
-                <mat-select placeholder="City" formControlName="city">
-                  <mat-option *ngFor="let city of cities" [value]="city.cityId">
-                    {{ city.cityName }}
-                  </mat-option>
-                </mat-select>
+                <mat-form-field>
+                  <mat-select (change)="getCities()" placeholder="State" formControlName="state">
+                    <mat-option *ngFor="let state of states" [value]="state.stateId">
+                      {{ state.name }}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+                <!-- <mat-form-field>
+                  <mat-select placeholder="City" formControlName="city">
+                    <mat-option *ngFor="let city of cities" [value]="city.cityId">
+                      {{ city.cityName }}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field> -->
+                <mat-form-field>
+                  <input matInput type="text" placeholder="City" [matAutocomplete]="auto" formControlName="city">
+                  <mat-autocomplete #auto="matAutocomplete">
+                    <mat-option *ngFor="let city of filteredCities | async" [value]="city.cityName">
+                      {{ city.cityName }}
+                    </mat-option>
+                  </mat-autocomplete>
+                </mat-form-field>
               </div>
             </div>
           </form>
